@@ -1,7 +1,7 @@
 {
-  "name": "gst-engine",
-  "version": "1.0.0",
-  "description": "A TypeScript-first GST engine for India \u2014 developed by Business Swift, Made in India \ud83c\uddee\ud83c\uddf3.",
+  "name": "@business-swift/gst-engine",
+  "version": "1.0.1",
+  "description": "A TypeScript-first GST engine for India — developed by Business Swift, Made in India 🇮🇳.",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
