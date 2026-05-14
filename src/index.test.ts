@@ -70,8 +70,12 @@ describe("getStateCodeFromGSTIN", () => {
   );
 });
 
-// ─── Non-taxable supply natures ───────────────────────────────────────────────
 
+// ─────────────────────────────────────────────────────────────────────────────
+// getGSTTreatment
+// ─────────────────────────────────────────────────────────────────────────────
+
+describe("getGSTTreatment", () => {
 describe("supply nature overrides", () => {
   const base: GSTTreatmentInput = {
     supplier: SUPPLIER_MH,
@@ -533,7 +537,108 @@ describe("bill-to / ship-to detection", () => {
   });
 });
 
-// ─── Tax computation ──────────────────────────────────────────────────────────
+  // ─── Supplier GSTIN optional — address.stateCode mandatory ───────────────
+
+  const SUPPLIER_MH_NO_GSTIN = { address: { stateCode: "27", city: "Mumbai" } };
+  const SUPPLIER_KA_NO_GSTIN = { address: { stateCode: "29", city: "Bengaluru" } };
+
+  describe("supplier without GSTIN — address.stateCode required", () => {
+    test("intra-state B2B — supplierGstin undefined in result", () => {
+      const r = getGSTTreatment({
+        supplier: SUPPLIER_MH_NO_GSTIN,
+        customer: { gstin: "27CCCPL9012E1Z8", billingAddress: BILL_MH },
+        invoice: INV_100K,
+      });
+      expect(r.category).toBe(GSTCategory.B2B);
+      expect(r.supplyType).toBe(SupplyType.INTRA_STATE);
+      expect(r.taxType).toBe(TaxType.CGST_SGST);
+      expect(r.supplierGstin).toBeUndefined();
+    });
+
+    test("inter-state B2B — IGST when supplier address \u2260 customer state", () => {
+      const r = getGSTTreatment({
+        supplier: SUPPLIER_MH_NO_GSTIN,
+        customer: { gstin: "29BBBPL5678D1Z3", billingAddress: BILL_KA },
+        invoice: INV_100K,
+      });
+      expect(r.category).toBe(GSTCategory.B2B);
+      expect(r.supplyType).toBe(SupplyType.INTER_STATE);
+      expect(r.taxType).toBe(TaxType.IGST);
+      expect(r.supplierGstin).toBeUndefined();
+    });
+
+    test("intra-state B2C — supplier KA, customer KA \u2192 CGST+SGST", () => {
+      const r = getGSTTreatment({
+        supplier: SUPPLIER_KA_NO_GSTIN,
+        customer: { billingAddress: BILL_KA },
+        invoice: INV_100K,
+      });
+      expect(r.supplyType).toBe(SupplyType.INTRA_STATE);
+      expect(r.taxType).toBe(TaxType.CGST_SGST);
+    });
+
+    test("inter-state B2C_LARGE — supplier MH, customer KA, value > 2.5L \u2192 IGST", () => {
+      const r = getGSTTreatment({
+        supplier: SUPPLIER_MH_NO_GSTIN,
+        customer: { billingAddress: BILL_KA },
+        invoice: INV_300K,
+      });
+      expect(r.category).toBe(GSTCategory.B2C_LARGE);
+      expect(r.taxType).toBe(TaxType.IGST);
+      expect(r.supplierGstin).toBeUndefined();
+    });
+
+    test("non-taxable supply without GSTIN — no error thrown", () => {
+      const r = getGSTTreatment({
+        supplier: SUPPLIER_MH_NO_GSTIN,
+        customer: { billingAddress: BILL_KA },
+        invoice: INV_10K,
+        supplyNature: SupplyNature.EXEMPTED,
+      });
+      expect(r.category).toBe(GSTCategory.EXEMPTED);
+      expect(r.taxType).toBe(TaxType.NONE);
+    });
+
+    test("export without supplier GSTIN — eWayBill for goods", () => {
+      const r = getGSTTreatment(
+        { supplier: SUPPLIER_MH_NO_GSTIN, customer: { billingAddress: BILL_US }, invoice: INV_100K },
+        { isGoods: true },
+      );
+      expect(r.category).toBe(GSTCategory.EXPORT_WITHOUT_PAYMENT);
+      expect(r.eWayBillRequired).toBe(true);
+      expect(r.supplierGstin).toBeUndefined();
+    });
+
+    test("GSTIN takes priority over address.stateCode", () => {
+      const r = getGSTTreatment({
+        supplier: { gstin: "27AAAPL1234C1Z5", address: { stateCode: "29" } },
+        customer: { gstin: "27CCCPL9012E1Z8", billingAddress: BILL_MH },
+        invoice: INV_100K,
+      });
+      expect(r.supplierGstin).toBe("27AAAPL1234C1Z5");
+      expect(r.supplyType).toBe(SupplyType.INTRA_STATE);
+    });
+
+    test("throws when supplier has no gstin and no address", () => {
+      expect(() =>
+        getGSTTreatment({ supplier: {}, customer: { billingAddress: BILL_KA }, invoice: INV_100K }),
+      ).toThrow(/address\.stateCode.*required/i);
+    });
+
+    test("throws when supplier address has no stateCode", () => {
+      expect(() =>
+        getGSTTreatment({ supplier: { address: { city: "Mumbai" } }, customer: { billingAddress: BILL_KA }, invoice: INV_100K }),
+      ).toThrow(/address\.stateCode.*required/i);
+    });
+
+    test("does NOT throw when address.stateCode is provided without gstin", () => {
+      expect(() =>
+        getGSTTreatment({ supplier: { address: { stateCode: "27" } }, customer: { billingAddress: BILL_KA }, invoice: INV_100K }),
+      ).not.toThrow();
+    });
+  }); // end supplier without GSTIN
+
+}); // end describe("getGSTTreatment")
 
 describe("computeTax", () => {
   test("18% IGST on 1,00,000", () => {

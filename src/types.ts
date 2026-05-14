@@ -135,10 +135,19 @@ export interface Address {
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface SupplierInfo {
-  /** 15-character GSTIN (mandatory). State code auto-extracted. */
-  gstin: string;
+  /**
+   * 15-character GSTIN of the supplier.
+   * Optional — if absent, `address.stateCode` **must** be provided
+   * so the engine can determine inter/intra-state supply type.
+   */
+  gstin?: string;
+
   registrationType?: RegistrationType;
-  /** Used as state code fallback if GSTIN parsing fails. */
+
+  /**
+   * Supplier address.
+   * `address.stateCode` is required when `gstin` is not supplied.
+   */
   address?: Address;
 }
 

@@ -1,10 +1,10 @@
-# gst-engine
+# @business-swift/gst-engine
 
 > A TypeScript-first GST (Goods & Services Tax) engine for India 🇮🇳.
 
 Determines transaction category, supply type, applicable tax heads, e-invoice applicability, and e-way bill requirement for any supplier–customer pair — automatically resolving Place of Supply from **billing and shipping addresses**.
 
-[![npm version](https://badge.fury.io/js/gst-engine.svg)](https://badge.fury.io/js/gst-engine)
+[![npm version](https://badge.fury.io/js/@business-swift%2Fgst-engine.svg)](https://badge.fury.io/js/@business-swift%2Fgst-engine)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Made in India](https://img.shields.io/badge/Made%20in-India%20🇮🇳-orange.svg)](https://businessswift.in)
 
@@ -22,7 +22,7 @@ Determines transaction category, supply type, applicable tax heads, e-invoice ap
 - ✅ Separate **billing and shipping address** inputs — Place of Supply resolved automatically
 - ✅ **Bill-to / Ship-to** (triangular transaction) auto-detection
 - ✅ **Goods vs Services** rule: shipping drives PoS for goods, billing for services
-- ✅ **Inter-state vs Intra-state** from GSTIN / address state codes
+- ✅ **Inter-state vs Intra-state** from GSTIN or `address.stateCode` (GSTIN optional for supplier)
 - ✅ **IGST / CGST+SGST / None** tax head determination
 - ✅ **Overseas export** detection from address `countryCode`
 - ✅ **GSTIN validation** (format + checksum)
@@ -38,9 +38,9 @@ Determines transaction category, supply type, applicable tax heads, e-invoice ap
 ## Installation
 
 ```bash
-npm install gst-engine
+npm install @business-swift/gst-engine
 # or
-yarn add gst-engine
+yarn add @business-swift/gst-engine
 ```
 
 ---
@@ -48,7 +48,7 @@ yarn add gst-engine
 ## Quick Start
 
 ```typescript
-import { getGSTTreatment } from "gst-engine";
+import { getGSTTreatment } from "@business-swift/gst-engine";
 
 const result = getGSTTreatment({
   supplier: {
@@ -113,11 +113,13 @@ If `billingAddress.countryCode` or `shippingAddress.countryCode` is any value ot
 
 #### `SupplierInfo`
 
-| Field              | Type               | Description                                           |
-| ------------------ | ------------------ | ----------------------------------------------------- |
-| `gstin`            | `string`           | 15-char GSTIN (mandatory). State code auto-extracted. |
-| `registrationType` | `RegistrationType` | Defaults to `REGULAR`                                 |
-| `address`          | `Address`          | Fallback if GSTIN parsing fails                       |
+| Field              | Type               | Required | Description                                                                                   |
+| ------------------ | ------------------ | -------- | --------------------------------------------------------------------------------------------- |
+| `gstin`            | `string?`          | ❌       | 15-char GSTIN. State code auto-extracted. Optional — see `address.stateCode` below.           |
+| `registrationType` | `RegistrationType` | ❌       | Defaults to `REGULAR`                                                                         |
+| `address`          | `Address`          | ⚠️       | `address.stateCode` is **required when `gstin` is absent** so inter/intra-state can be determined. |
+
+> **Rule:** provide either `gstin` **or** `address.stateCode` (or both). The engine throws at runtime if neither is present.
 
 ---
 
@@ -211,7 +213,7 @@ If `billingAddress.countryCode` or `shippingAddress.countryCode` is any value ot
 ### Standard B2B — goods, inter-state, bill-to/ship-to
 
 ```typescript
-import { getGSTTreatment } from "gst-engine";
+import { getGSTTreatment } from "@business-swift/gst-engine";
 
 // Supplier in Maharashtra; customer billed in Karnataka but goods ship to Gujarat
 const result = getGSTTreatment(
@@ -239,6 +241,8 @@ const result = getGSTTreatment(
 ### Services — PoS from customer GSTIN
 
 ```typescript
+import { getGSTTreatment } from "@business-swift/gst-engine";
+
 // Supplier MH, Customer has KA GSTIN, but billing/shipping addresses are both MH
 const result = getGSTTreatment(
   {
@@ -275,10 +279,39 @@ const result = getGSTTreatment({
 // eInvoiceApplicable: false
 ```
 
+### Supplier without GSTIN — `address.stateCode` as fallback
+
+When the supplier's GSTIN is not available (e.g. composition dealer or pre-registration scenario), pass `address.stateCode` instead:
+
+```typescript
+import { getGSTTreatment } from "@business-swift/gst-engine";
+
+// Supplier in Maharashtra (no GSTIN), customer in Karnataka
+const result = getGSTTreatment({
+  supplier: {
+    address: { stateCode: "27" }, // ← required when gstin is absent
+  },
+  customer: {
+    gstin: "29BBBPL5678D1Z3",
+    billingAddress: { stateCode: "29", city: "Bengaluru", countryCode: "IN" },
+  },
+  invoice: { taxableValue: 80_000 },
+});
+// category:       "B2B"
+// supplyType:     "INTER_STATE"  (MH supplier ≠ KA customer)
+// taxType:        "IGST"
+// supplierGstin:  undefined      (none was provided)
+```
+
+> Omitting both `gstin` and `address.stateCode` throws:
+> `SupplierInfo: 'address.stateCode' is required when 'gstin' is not provided.`
+
+---
+
 ### SEZ — zero-rated (LUT), with e-invoice
 
 ```typescript
-import { getGSTTreatment, RegistrationType } from "gst-engine";
+import { getGSTTreatment, RegistrationType } from "@business-swift/gst-engine";
 
 const result = getGSTTreatment(
   {
@@ -320,7 +353,7 @@ const result = getGSTTreatment({
 ## Tax Computation
 
 ```typescript
-import { computeTax, TaxType } from "gst-engine";
+import { computeTax, TaxType } from "@business-swift/gst-engine";
 
 // IGST @ 18%
 const t = computeTax(100_000, 18, TaxType.IGST);
@@ -341,7 +374,7 @@ const t3 = computeTax(100_000, 28, TaxType.IGST, 22);
 ## GSTIN Utilities
 
 ```typescript
-import { isValidGSTIN, getStateCodeFromGSTIN, getStateName } from "gst-engine";
+import { isValidGSTIN, getStateCodeFromGSTIN, getStateName } from "@business-swift/gst-engine";
 
 isValidGSTIN("29AABCU9603R1ZP"); // true/false (format + checksum)
 getStateCodeFromGSTIN("27AAAPL1234C1Z5"); // "27"

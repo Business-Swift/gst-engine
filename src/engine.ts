@@ -157,9 +157,13 @@ function resolvePlaceOfSupply(
 }
 
 function getSupplierStateCode(supplier: SupplierInfo): string | undefined {
+  // 1. Extract from GSTIN (most authoritative)
   const normGstin = normaliseGSTIN(supplier.gstin);
   if (normGstin) return getStateCodeFromGSTIN(normGstin);
+
+  // 2. Address stateCode fallback
   if (supplier.address) return getAddrStateCode(supplier.address);
+
   return undefined;
 }
 
@@ -181,7 +185,7 @@ function resolveEInvoice(eligible: boolean, turnoverCr?: number): boolean {
  * Determines the complete GST treatment for a supplier → customer transaction.
  *
  * Inputs:
- *   supplier         – GSTIN + optional address
+ *   supplier         – GSTIN (optional) + stateCode or address (required when GSTIN absent)
  *   customer         – GSTIN (optional) + billingAddress + shippingAddress (optional)
  *   invoice          – taxable value
  *   supplyNature     – TAXABLE (default) | NIL_RATED | EXEMPTED | NON_GST
@@ -210,7 +214,17 @@ export function getGSTTreatment(
   const supplyNature = input.supplyNature ?? SupplyNature.TAXABLE;
   const isGoods = options.isGoods ?? true;
 
-  const supplierGstin = normaliseGSTIN(supplier.gstin);
+  // ── Validate supplier state code availability ──────────────────────────────
+  // GSTIN is optional, but when absent address.stateCode must be provided so
+  // the engine can determine inter / intra-state supply type.
+  const supplierGstinNorm = normaliseGSTIN(supplier.gstin);
+  if (!supplierGstinNorm && !supplier.address?.stateCode) {
+    throw new Error(
+      "SupplierInfo: 'address.stateCode' is required when 'gstin' is not provided.",
+    );
+  }
+
+  const supplierGstin = supplierGstinNorm;
   const customerGstin = normaliseGSTIN(customer.gstin);
 
   const shipping = customer.shippingAddress ?? customer.billingAddress;
