@@ -1,0 +1,590 @@
+{
+  "01": {
+    "name": "Live Animals; Animal products",
+    "slug": "chapter-1-live-animal-products-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Live Animals; Animal products - Chapter1",
+    "metaDescription": "GST Rates & HSN Codes for Live Animals - Horses, Asses, Mules , Bovine & Poultry Animals , Mammals, Reptiles, Birds & Insects - Chapter 1"
+  },
+  "70": {
+    "name": "Glass and glassware",
+    "slug": "chapter-70-glass-glassware-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Glass and glassware - Chapter70",
+    "metaDescription": "GST Rates & HSN Codes on Glass, Mirrors, Flasks - Chapter 70"
+  },
+  "71": {
+    "name": "Natural or cultured pearls, precious or semi-precious stones, precious metals, metals clad with precious metal, and articles thereof; imitation jewelry; coin",
+    "slug": "chapter-71-natural-cultured-pearls-precious-semi-precious-stones-metals-clad-imitation-jewelry-coin-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Natural or cultured pearls, precious or semi-precious stones, precious metals, metals clad with precious metal, and articles thereof; imitation jewelry; coin - Chapter71",
+    "metaDescription": "GST Rates & HSN Codes on Precious Stones - Diamond, Pearls, Gold, Platinum, Jewellery & Coins - Chapter 71"
+  },
+  "72": {
+    "name": "Iron and steel",
+    "slug": "chapter-72-iron-steel-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Iron and steel - Chapter72",
+    "metaDescription": "GST Rates & HSN Codes on Ferro Alloys, Ferrous waste & scraps of Iron or Non Alloy Steels - Chapter 72"
+  },
+  "73": {
+    "name": "Articles of iron or steel",
+    "slug": "chapter-73-iron-steel-articles-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Articles of iron or steel - Chapter73",
+    "metaDescription": "GST Rates & HSN Codes on Iron Tubes, Piles, Sheets & Hollow profiles - Chapter 73"
+  },
+  "74": {
+    "name": "Copper and articles thereof",
+    "slug": "chapter-74-copper-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Copper and articles thereof - Chapter74",
+    "metaDescription": "GST Rates & HSN Codes on Copper Mattes, Alloys, Waste, Scrap, Wires, Sheet, foils, tubes & Nails - Chapter 74"
+  },
+  "75": {
+    "name": "Nickel and articles thereof",
+    "slug": "chapter-75-nickel-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Nickel and articles thereof - Chapter75",
+    "metaDescription": "GST Rates & HSN Codes on Nickel Mattes, Unwrought Nickel & Alloys - Chapter 75"
+  },
+  "02": {
+    "name": "Meat and edible meat offal",
+    "slug": "chapter-2-meat-edible-meat-offal-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Meat and edible meat offal - Chapter2",
+    "metaDescription": "GST Rates & HSN Codes on Edible Meat & Offal of Animals - Bovine, Poultry & Sea Animals - Chapter 2"
+  },
+  "20": {
+    "name": "Preparations of vegetables, fruit, nuts or other parts of plants",
+    "slug": "chapter-20-vegetables-fruit-nuts-preparations-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Preparations of vegetables, fruit, nuts or other parts of plants - Chapter20",
+    "metaDescription": "GST Rates & HSN Code for Vegetable, Fruits & Nuts of Edible Plants, Jams, Jellies, Juices, Mushrooms & Truffles - Chapter 20"
+  },
+  "21": {
+    "name": "Miscellaneous edible preparations",
+    "slug": "chapter-21-miscellaneous-edible-preparations-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Miscellaneous edible preparations - Chapter21",
+    "metaDescription": "GST Rates & HSN Codes on Tea & Coffee Extracts, Essence & Concentrates - Chapter 21"
+  },
+  "22": {
+    "name": "Beverages, spirits and vinegar",
+    "slug": "chapter-22-beverages-spirits-vinegar-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Beverages, spirits and vinegar - Chapter22",
+    "metaDescription": "GST Rates & HSN Codes on Mineral & Aerated Water, Vinegar & Non Alcoholic Drinks - Chapter 22"
+  },
+  "23": {
+    "name": "Residues and waste from the food industries; prepared animal fodder",
+    "slug": "chapter-23-residues-waste-food-industries-prepared-animal-fodder-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Residues and waste from the food industries; prepared animal fodder - Chapter23",
+    "metaDescription": "GST Rates & HSN Codes on Flours, Meals, Pellets & Oil Cakes - Chapter 23"
+  },
+  "24": {
+    "name": "Tobacco and manufactured tobacco substitutes",
+    "slug": "chapter-24-tobacco-manufactured-substitutes-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Tobacco and manufactured tobacco substitutes - Chapter24",
+    "metaDescription": "GST Rates & HSN Codes on Stemmed, Stripped & Unmanufactured Tobacco - Chapter 24"
+  },
+  "25": {
+    "name": "Mineral Products-Salt; sulphur; earths and stone; plastering materials, lime and cement",
+    "slug": "chapter-25-mineral-products-salt-sulphur-earths-stone-plastering-materials-lime-cement-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Mineral Products-Salt; sulphur; earths and stone; plastering materials, lime and cement - Chapter25",
+    "metaDescription": "GST Rates & HSN Codes on Salts & Sands - Graphite, Quartz, Cement, Clay & Marble - Chapter 25"
+  },
+  "26": {
+    "name": "Ores, slag and ash",
+    "slug": "chapter-26-ores-slag-ash-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Ores, slag and ash - Chapter26",
+    "metaDescription": "GST Rates & HSN Codes on Mineral Ores - Iron, Manganese, Aluminium, Chromium & Titanium - Chapter 26"
+  },
+  "27": {
+    "name": "Mineral fuels, mineral oils and products of their distillation; bituminous substances; mineral waxes",
+    "slug": "chapter-27-mineral-fuels-oils-distillation-bituminous-substances-mineral-waxes-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Mineral fuels, mineral oils and products of their distillation; bituminous substances; mineral waxes - Chapter27",
+    "metaDescription": "GST Rates & HSN Codes on Fossil Fuels - Coal, Petroleum & Natural Gas - Chapter 27"
+  },
+  "28": {
+    "name": "Inorganic chemicals, organic or inorganic compounds of precious metals, of rare-earth metals, of radioactive",
+    "slug": "chapter-28-organic-inorganic-chemicals-compounds-precious-metals-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Inorganic chemicals, organic or inorganic compounds of precious metals, of rare-earth metals, of radioactive - Chapter28",
+    "metaDescription": "GST Rates & HSN Codes on Gases & Non Metals - Hydrogen, Fluorine, Chlorine & Nitric Acid - Chapter 28"
+  },
+  "29": {
+    "name": "elements or of isotopes",
+    "slug": "chapter-29-elements-isotopes-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for elements or of isotopes - Chapter29",
+    "metaDescription": "GST Rates & HSN Codes on Cyclic & Acyclic Hydrocarbons, Saturated & Unsaturated - Chapter 29"
+  },
+  "30": {
+    "name": "Pharmaceutical products",
+    "slug": "chapter-30-pharmaceutical-products-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Pharmaceutical products - Chapter30",
+    "metaDescription": "GST Rates & HSN Codes on Medicines, Drugs & Pharmaceuticals - Chapter 30"
+  },
+  "31": {
+    "name": "Fertilizers",
+    "slug": "chapter-31-fertilizers-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Fertilizers - Chapter31",
+    "metaDescription": "GST Rates & HSN Codes for Chapter 31 - Fertilisers - Chapter 31"
+  },
+  "32": {
+    "name": "Tanning or dyeing extracts; tannins and their derivatives; dyes, pigments and other colouring matter; paints and varnishes; putty and other mastics; inks",
+    "slug": "chapter-32-tanning-dyeing-extracts-dyes-pigments-paints-varnishes-putty-mastics-inks-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Tanning or dyeing extracts; tannins and their derivatives; dyes, pigments and other colouring matter; paints and varnishes; putty and other mastics; inks - Chapter32",
+    "metaDescription": "GST Rates & HSN Codes on Tanning Extracts & Organic Colouring Substances - Chapter 32"
+  },
+  "33": {
+    "name": "Essential oils and resinoids, perfumery, cosmetic or toilet preparations",
+    "slug": "chapter-33-essential-oils-resinoids-perfumery-cosmetic-toilet-preparations-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Essential oils and resinoids, perfumery, cosmetic or toilet preparations - Chapter33",
+    "metaDescription": "GST Rates & HSN Codes on Make-up, Perfumes, Skin Care & Hair Products - Chapter 33"
+  },
+  "34": {
+    "name": "Soap, organic surface-active agents, washing preparations, lubricating preparations, artificial waxes, prepared waxes, polishing or scouring preparations, candles and similar rticles, modelling pastes, dental waxes and dental preparations with a basis o",
+    "slug": "chapter-34-soap-washing-lubricating-artificial-waxes-polishing-scouring-candles-modelling-pastes-dental-waxes-preparations-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Soap, organic surface-active agents, washing preparations, lubricating preparations, artificial waxes, prepared waxes, polishing or scouring preparations, candles and similar rticles, modelling pastes, dental waxes and dental preparations with a basis o - Chapter34",
+    "metaDescription": "GST Rates & HSN Codes on Lubricating Oils, candles, Detergents, Dental Wax, Toilet Soaps - Chapter 34"
+  },
+  "35": {
+    "name": "Albuminoidal substances; modified starches; glues; enzymes",
+    "slug": "chapter-35-albuminoidal-substances-starches-glues-enzymes-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Albuminoidal substances; modified starches; glues; enzymes - Chapter35",
+    "metaDescription": "GST Rates & HSN Codes on Glues, Starches, Whey Proteins, Adhesives, Peptones - Chapter 35"
+  },
+  "03": {
+    "name": "Fish and crustaceans, molluscs and other aquatic invertebrates",
+    "slug": "chapter-3-fish-crustaceans-molluscs-aquatic-invertebrates-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Fish and crustaceans, molluscs and other aquatic invertebrates - Chapter3",
+    "metaDescription": "GST Rates & HSN Codes on Aquatic Animals - Fish Fillets & Other Fish Meat - Chapter 3"
+  },
+  "04": {
+    "name": "Dairy produce; birds eggs; natural honey; edible product of animal origin, not elsewhere specified or included",
+    "slug": "chapter-4-dairy-eggs-natural-honey-edible-animal-product-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Dairy produce; birds eggs; natural honey; edible product of animal origin, not elsewhere specified or included - Chapter4",
+    "metaDescription": "GST Rates & HSN Codes on Edible Animal Products - Eggs, Honey & Milk Products like Cheese, Curd and Cream - Chapter 4"
+  },
+  "79": {
+    "name": "Zinc and articles thereof",
+    "slug": "chapter-79-zinc-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Zinc and articles thereof - Chapter79",
+    "metaDescription": "GST Rates & HSN Codes on Zinc Rods, Sheets, Profiles, Bars, Wires & Unwrought Zinc - Chapter 79"
+  },
+  "80": {
+    "name": "Tin and articles thereof",
+    "slug": "chapter-80-tin-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Tin and articles thereof - Chapter80",
+    "metaDescription": "GST Rates & HSN Codes on Tin Rods, Sheets, Profiles, Bars, Wires & Unwrought Tin - Chapter 80"
+  },
+  "81": {
+    "name": "Other base metals; cermets; articles thereof",
+    "slug": "chapter-81-cermets-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Other base metals; cermets; articles thereof - Chapter81",
+    "metaDescription": "GST Rates & HSN Code for Articles of Magnesium, Cobalt, Tungsten - Bars, Rods, Waste, Scrap, Wires and Others - Chapter 81"
+  },
+  "82": {
+    "name": "Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal",
+    "slug": "chapter-82-tools-implements-cutlery-spoons-forks-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal - Chapter82",
+    "metaDescription": "GST Rates & HSN Code for Hand Tools & Cutlery - Spades, Spanners, Razors, Spoons and Others - Chapter 82"
+  },
+  "83": {
+    "name": "Miscellaneous articles of base metal",
+    "slug": "chapter-83-base-metal-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Miscellaneous articles of base metal - Chapter83",
+    "metaDescription": "GST Rates & HSN Code for Locks & Metal Bindings - Keys, Bells, Clasps, Padlocks and Others - Chapter 83"
+  },
+  "84": {
+    "name": "Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof",
+    "slug": "chapter-84-nuclear-reactors-boilers-machinery-mechanical-appliances-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof - Chapter84",
+    "metaDescription": "GST Rates & HSN Code for Industrial Machinery - Reactors, Elevators, Turbines, Engines and Others - Chapter 84"
+  },
+  "85": {
+    "name": "Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles",
+    "slug": "chapter-85-electrical-machinery-equipment-sound-recorders-reproducers-television-image-parts-accessories-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles - Chapter85",
+    "metaDescription": "GST Rates & HSN Code for Electrical Parts & Electronics - Generators, Motors, Transformers, Telephones and Others - Chapter 85"
+  },
+  "05": {
+    "name": "Products of animal origin, not elsewhere specified or included",
+    "slug": "chapter-5-animal-origin-products-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Products of animal origin, not elsewhere specified or included - Chapter5",
+    "metaDescription": "GST Rates & HSN Codes on Non - Edible Animal Products - Animal Hair, Shells, Bone, Feathers & Skin - Chapter 5"
+  },
+  "92": {
+    "name": "Musical instruments; parts and accessories of such articles",
+    "slug": "chapter-92-musical-instruments-parts-accessories-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Musical instruments; parts and accessories of such articles - Chapter92",
+    "metaDescription": "GST Rate & HSN Code for Musical Instruments - Piano, Keyboard, Harmoniums, Drums, Xylophones, Mouth Organs, Pipe Organs & other Musicak Intruments. - Chapter 92"
+  },
+  "93": {
+    "name": "Arms and ammunition; parts and accessories thereof",
+    "slug": "chapter-93-arms-ammunitions-parts-accessories-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Arms and ammunition; parts and accessories thereof - Chapter93",
+    "metaDescription": "GST Rate & HSN Code for Military Weapons & Firearms - Missiles, Mines, Guns, Rocket launcher, Grenade Launcher, Pistol, Revolvers, Shotgun, Bombs and others - Chapter 93"
+  },
+  "94": {
+    "name": "Furniture; bedding, mattresses, mattress supports, cushions and similar stuffed furnishing; lamps and lighting fittings, not elsewhere specified or included; illuminated signs, illuminated name-plates and the like; prefabricated building",
+    "slug": "chapter-94-furniture-mattresses-cushions-lamps-lightings-illuminated-signs-name-plates-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Furniture; bedding, mattresses, mattress supports, cushions and similar stuffed furnishing; lamps and lighting fittings, not elsewhere specified or included; illuminated signs, illuminated name-plates and the like; prefabricated building - Chapter94",
+    "metaDescription": "GST Rate & HSN Code for Furniture, Bedding & Lightings - Seats, Hospital Furnitures, Furniture parts, Mattresses, Quilt, Cushion, Pillows, Lamps & Lighting Fitting. - Chapter 94"
+  },
+  "95": {
+    "name": "Toys, games and sports requisites; parts and accessories thereof",
+    "slug": "chapter-95-toys-games-sports-parts-accessories-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Toys, games and sports requisites; parts and accessories thereof - Chapter95",
+    "metaDescription": "GST Rate & HSN Code for Children Toys, Table & Board Games & Sports Goods - Dolls, Tricycles, Scooters, Electronic Toys, Chess, Carom, Playing Card, Billiards, Golf, Swimming & Padding Pools. - Chapter 95"
+  },
+  "06": {
+    "name": "Vegetable products",
+    "slug": "chapter-6-vegetable-products-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Vegetable products - Chapter6",
+    "metaDescription": "GST Rates & HSN Codes on Live Trees & Plants along with their products - Roots, Flowers, Tubers, Bulbs & Branches - Chapter 6"
+  },
+  "07": {
+    "name": "Edible vegetables and certain roots and tubers",
+    "slug": "chapter-7-edible-vegetable-roots-tuber-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Edible vegetables and certain roots and tubers - Chapter7",
+    "metaDescription": "GST Rates & HSN Codes on Vegetables - Potatoes, Onions, Tomatoes, Cabbage & Cauliflower - Chapter 7"
+  },
+  "08": {
+    "name": "Edible fruit and nuts; peel of citrus fruit or melons",
+    "slug": "chapter-8-edible-fruit-nut-citrus-fruit-peel-melons-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Edible fruit and nuts; peel of citrus fruit or melons - Chapter8",
+    "metaDescription": "GST Rates & HSN Codes on Fruits & Dry Fruits - Mangoes, Apples, Guava, Cashew & Nuts - Chapter 8"
+  },
+  "09": {
+    "name": "Coffee, tea, mate and spices",
+    "slug": "chapter-9-coffee-tea-mate-spices-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Coffee, tea, mate and spices - Chapter9",
+    "metaDescription": "GST Rates & HSN Codes on Tea, Coffee & Spices - Cardamom, Cinnamon & Pepper - Chapter 9"
+  },
+  "10": {
+    "name": "Cereals",
+    "slug": "chapter-10-cereals-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Cereals - Chapter10",
+    "metaDescription": "GST Rates & HSN Codes on Edible Grains -Rice, Wheat, Barley, Jawar, Bazra & Maize - Chapter 10"
+  },
+  "11": {
+    "name": "Products of the milling industry; malt; starches; inulin; wheat gluten",
+    "slug": "chapter-11-milling-products-malt-starches-inulin-wheat-gluten-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Products of the milling industry; malt; starches; inulin; wheat gluten - Chapter11",
+    "metaDescription": "HSN Code & Tax Rate for Milling Industry Products - Wheat Flour, Cereal Flour, Cereal Groats, Starches, Inulin, Meal, Pellets, Flakes & Gluten - Chapter 11"
+  },
+  "12": {
+    "name": "Oil seeds and oleaginous fruits, miscellaneous grains,seeds and fruit; industrial or medical plants; straw and fodder",
+    "slug": "chapter-12-oil-seeds-oleaginous-fruits-grainsseeds-fruit-industrial-medical-plants-straw-fodder-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Oil seeds and oleaginous fruits, miscellaneous grains,seeds and fruit; industrial or medical plants; straw and fodder - Chapter12",
+    "metaDescription": "GST Rates & HSN Code for Oil Seeds & Oleaginous Fruit - Ground-Nuts, Soyabean, SunFlower, Linseed, other Oil Seed - Seeds, Fruits & Spores for Sowing - Chapter 12"
+  },
+  "15": {
+    "name": "Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes",
+    "slug": "chapter-15-edible-animal-vegetable-fats-oils-cleavage-products-prepared-waxes-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes - Chapter15",
+    "metaDescription": "GST Rates & HSN Code for Fats, Oils, Waxes & their Fractions from Animals, Fishes, Nuts, other Mammals & Vegetables - Chapter 15"
+  },
+  "18": {
+    "name": "Cocoa and cocoa preparations",
+    "slug": "chapter-18-cocoa-preparations-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Cocoa and cocoa preparations - Chapter18",
+    "metaDescription": "GST Rates & HSN Codes on Cocoa Powder, Beans, Paste, Butter, Chocolate & other Food Product containing Cocoa - Chapter 18"
+  },
+  "36": {
+    "name": "Explosives; pyrotechnic products; matches; pyrophoric alloys; certain combustible preparations",
+    "slug": "chapter-36-explosives-pyrotechnic-matches-pyrophoric-alloys-combustible-preparations-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Explosives; pyrotechnic products; matches; pyrophoric alloys; certain combustible preparations - Chapter36",
+    "metaDescription": "GST Rates & HSN Codes on Gun Powder, Detonators, Matches, DNPT & Combustible Products - Chapter 36"
+  },
+  "37": {
+    "name": "Photographic or cinematographic goods",
+    "slug": "chapter-37-photographic-cinematographic-goods-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Photographic or cinematographic goods - Chapter37",
+    "metaDescription": "GST Rates & HSN Codes on Paperboard, Photographic plates & Adhesives, Film Strips - Chapter 37"
+  },
+  "38": {
+    "name": "Miscellaneous chemical products",
+    "slug": "chapter-38-chemical-products-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Miscellaneous chemical products - Chapter38",
+    "metaDescription": "GST Rates & HSN Codes on Gum, Wood, Sulphate Oils, Fungicides, Herbicides - Chapter 38"
+  },
+  "39": {
+    "name": "Plastics and articles thereof",
+    "slug": "chapter-39-plastics-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Plastics and articles thereof - Chapter39",
+    "metaDescription": "GST Rates & HSN Codes on Plastics, Gloves, Polyesters, Resins, Natural Polymers - Chapter 39"
+  },
+  "40": {
+    "name": "Rubber and articles thereof",
+    "slug": "chapter-40-rubber-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Rubber and articles thereof - Chapter40",
+    "metaDescription": "GST Rates & HSN Codes for Natural Rubber, Synthetic Rubber, Compound Rubber, Plates, Sheets, Pipes,Condensed Milk - Chapter 40"
+  },
+  "41": {
+    "name": "Raw hides and skins (other than furskins) and leather",
+    "slug": "chapter-41-raw-hides-skins-furskins-leather-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Raw hides and skins (other than furskins) and leather - Chapter41",
+    "metaDescription": "GST Rates & HSN Codes for Raw hides & Skins, Leather further prepared after tanning or crusting, Raw hides of Sheep or Lambs - Chapter 41"
+  },
+  "42": {
+    "name": "Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silkworm gut)",
+    "slug": "chapter-42-leather-travel-goods-handbags-containers-animal-silkworm-gut-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silkworm gut) - Chapter42",
+    "metaDescription": "GST Rates & HSN Codes for Trunks, Suit-cases, Vanity cases, Saddlery & Harness for any Animal, Articles of Gut - Chapter 42"
+  },
+  "44": {
+    "name": "Wood and articles of wood; wood charcoal",
+    "slug": "chapter-44-wood-charcoal-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Wood and articles of wood; wood charcoal - Chapter44",
+    "metaDescription": "GST Rates & HSN Codes for Fuel wood, Wood Charcoal. wood in the rough, Split poles, Particle board, Board of Coiur, Jute fibre - Chapter 44"
+  },
+  "47": {
+    "name": "Pulp of wood or of other fibrous cellulosic material; recovered",
+    "slug": "chapter-47-pulp-wood-fibrous-cellulosic-material-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Pulp of wood or of other fibrous cellulosic material; recovered - Chapter47",
+    "metaDescription": "GST Rates & HSN Codes for Mechanical & Chemical woodpulp, Pulps of fibers derived from recovered paper or paperboard, - Chapter 47"
+  },
+  "48": {
+    "name": "(waste and scrap) paper or paperboard",
+    "slug": "chapter-48-waste-scrap-paper-paperboard-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for (waste and scrap) paper or paperboard - Chapter48",
+    "metaDescription": "GST Rates & HSN Codes for Newsprint in rolls or sheets, Uncoated paper & paperboard, Vegetable parchment - Chapter 48"
+  },
+  "49": {
+    "name": "Printed books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans",
+    "slug": "chapter-49-printed-books-newspapers-pictures-manuscripts-typescripts-plans-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Printed books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans - Chapter49",
+    "metaDescription": "GST Rates & HSN Codes for Printed Books, Brochures, Newspapers, Calendars, Childres's colouring books, Picture books, Atlases, Other printed material - Chapter 49"
+  },
+  "50": {
+    "name": "Textiles And Textile Articles",
+    "slug": "chapter-50-textiles-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Textiles And Textile Articles - Chapter50",
+    "metaDescription": "GST Rates & HSN Code for Chapter 50 - Silk Worm Coccon, Silk Waste, Silk Yarm, Raw & Mulberry Silk, Handloom & Wooven Fabrics of Silk - Chapter 50"
+  },
+  "51": {
+    "name": "Wool, fine or coarse animal hair; horsehair yarn and woven fabric",
+    "slug": "chapter-51-wool-animal-hair-horsehair-yarn-woven-fabric-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Wool, fine or coarse animal hair; horsehair yarn and woven fabric - Chapter51",
+    "metaDescription": "GST Rates & HSN Codes For Wool, Fleece, Washed Wool, Shorn Wool, Fine or Coarse Animal Hair, Not Carded or Combed Fine Animal Hair, Maeine Angora, Goat Hair, Pig And Boar Bristles, Waste Of Wool, Yarn Wast - Chapter 51"
+  },
+  "52": {
+    "name": "Cotton",
+    "slug": "chapter-52-cotton-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Cotton - Chapter52",
+    "metaDescription": "GST Rates & HSN Codes For Cotton Yarn, Not Carded or Combed Cotton, Indian Cotton Of Staple Lenght, Bengal Deshi, Cotton Waste, Yarn Waste, Thread Waste, Garnetted Wasted Stock, Cotton Sewing Thread, Synthentic Staple Thread, Darning, Embroidery Cotton Thread, Uncombed Fibers, Dyed, Grey, Woven Fabrics - Chapter 52"
+  },
+  "53": {
+    "name": "Other vegetable textile fibres; paper yarn and woven fabrics of paper yarn",
+    "slug": "chapter-53-vegetable-textile-fibres-paper-yarn-woven-fabrics-paper-yarn-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Other vegetable textile fibres; paper yarn and woven fabrics of paper yarn - Chapter53",
+    "metaDescription": "GST Rates & HSN Codes For Flax Raw Materials Jute And Other Raw Materials, Bast Fibers, Tow And Waste Of These Fibers, Sisal, Vegetable Textile Fibers, Woven Fabrics, Paper Yarn, Geo Textiles, Weight Of Flax - Chapter 53"
+  },
+  "55": {
+    "name": "Man-made staple fibres",
+    "slug": "chapter-55-man-made-staple-fibres-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Man-made staple fibres - Chapter55",
+    "metaDescription": "GST Rates & HSN Codes For Synthetic Felament Tows & Staple Fibers Waste Woven Fabrics Waste Fabrics Artifical Staple Fibers, Polyester Staple Fibres - Chapter 55"
+  },
+  "58": {
+    "name": "Special woven fabrics; tufted textile fabrics; lace; tapestries; trimmings; embroidery",
+    "slug": "chapter-58-woven-fabrics-tufted-textile-lace-tapestries-trimmings-embroidery-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Special woven fabrics; tufted textile fabrics; lace; tapestries; trimmings; embroidery - Chapter58",
+    "metaDescription": "GST Rates & HSN Codes For Woven Pile & Chennile, Terry Towelings, Embroider Materials, Woven Fabric Metals, Trimming Of Pices, ornamental Trimming, Labels And Badges - Chapter 58"
+  },
+  "59": {
+    "name": "Impregnated, coated, covered or laminated textile fabrics; textile articles of a kind suitable for industrial use",
+    "slug": "chapter-59-impregnated-coated-covered-laminated-textile-fabrics-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Impregnated, coated, covered or laminated textile fabrics; textile articles of a kind suitable for industrial use - Chapter59",
+    "metaDescription": "GST Rates & HSN Codes For Rubberised Textile Fabrics,Convayer Belts, Transmission, Accessories, Laminated With Plastic - Chapter 59"
+  },
+  "61": {
+    "name": "Articles of apparel and clothing accessories, knitted or crocheted",
+    "slug": "chapter-61-apparel-clothing-accessories-knitted-crocheted-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Articles of apparel and clothing accessories, knitted or crocheted - Chapter61",
+    "metaDescription": "GST Rates & HSN Codes on Clothing & Accessories for Men, Women & Children - Chapter 61"
+  },
+  "62": {
+    "name": "Articles of apparel and clothing accessories, not knitted or crocheted",
+    "slug": "chapter-62-apparel-clothing-accessories-not-knitted-crocheted-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Articles of apparel and clothing accessories, not knitted or crocheted - Chapter62",
+    "metaDescription": "GST Rates & HSN Codes on Jackets, Coats, Cloaks & Garments for Men, Women & Children - Chapter 62"
+  },
+  "63": {
+    "name": "Other made up textile articles; sets; worn clothing and worn textile articles; rags",
+    "slug": "chapter-63-sets-worn-clothing-textile-rags-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Other made up textile articles; sets; worn clothing and worn textile articles; rags - Chapter63",
+    "metaDescription": "GST Rates & HSN Codes on Blankets, Bedsheets, Linen, Table Cloth & Curtains - Chapter 63"
+  },
+  "68": {
+    "name": "Articles of stone, plaster, cement, asbestos, mica or similar materials",
+    "slug": "chapter-68-stone-plaster-cement-asbestos-mica-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Articles of stone, plaster, cement, asbestos, mica or similar materials - Chapter68",
+    "metaDescription": "GST Rates & HSN Codes on Stones, Abrasives, Cement & Grinding Wheel - Chapter 68"
+  },
+  "69": {
+    "name": "Ceramic products",
+    "slug": "chapter-69-ceramic-products-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Ceramic products - Chapter69",
+    "metaDescription": "GST Rates & HSN Codes on Bricks, Blocks, Ceramics & Fossils - Chapter 69"
+  },
+  "13": {
+    "name": "Lac; gums, resins and other vegetable saps and extracts",
+    "slug": "chapter-13-lac-gums-resins-vegetable-saps-extracts-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Lac; gums, resins and other vegetable saps and extracts - Chapter13",
+    "metaDescription": "GST Rates & HSN Code for Natural Gums, Resins, Gum-Resins, Oleoresins, Vegetable Saps, Extracts & Pectic Substances - Chapter 13"
+  },
+  "14": {
+    "name": "Vegetable plaiting materials; vegetable product not elsewhere specified",
+    "slug": "chapter-14-vegetable-plaiting-product-materials-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Vegetable plaiting materials; vegetable product not elsewhere specified - Chapter14",
+    "metaDescription": "GST Rates & HSN Code for Vegetable Material for Plaiting, Katha, Betel Leaves, & Products such as Cotton Linters, Coconut Shells, Bidi Wrapper and others. - Chapter 14"
+  },
+  "76": {
+    "name": "Aluminium and articles thereof",
+    "slug": "chapter-76-aluminium-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Aluminium and articles thereof - Chapter76",
+    "metaDescription": "GST Rates & HSN Codes on Aluminium Rods, Sheets, Profiles, Foils & Unwrought Aluminium - Chapter 76"
+  },
+  "87": {
+    "name": "Vehicles other than railway or tramway rolling-stock, and parts and accessories thereof",
+    "slug": "chapter-87-vehicles-railway-tramway-rolling-stock-parts-accessories-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Vehicles other than railway or tramway rolling-stock, and parts and accessories thereof - Chapter87",
+    "metaDescription": "GST Rates & HSN Code for Tractors & Motor Vehicles - Motorcycles, Cars, Trailers & Accessories - Chapter 87"
+  },
+  "90": {
+    "name": "Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof",
+    "slug": "chapter-90-optical-photographic-cinematographic-measuring-checking-precision-medical-surgical-instruments-apparatus-parts-accessories-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof - Chapter90",
+    "metaDescription": "GST Rates & HSN Code for Instruments of Medical, Chemical & Astronomy - Apparatus, Binoculars & Others - Chapter 90"
+  },
+  "91": {
+    "name": "Clocks and watches and parts thereof",
+    "slug": "chapter-91-clocks-watches-parts-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Clocks and watches and parts thereof - Chapter91",
+    "metaDescription": "GST Rates & HSN Code for Watches & Clocks - Wrist Watch, Stop Watch, Pocket Watch, Alarm Clocks, Wall Clocks and others. - Chapter 91"
+  },
+  "96": {
+    "name": "Miscellaneous manufactured articles",
+    "slug": "chapter-96-miscellaneous-manufactured-articles-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Miscellaneous manufactured articles - Chapter96",
+    "metaDescription": "GST Rate & HSN Code for Animal Articles, Pencil, Typewriter, Cigarette Lighter, Smoking Pipe, Toilet Sprays, Sanitary Napkins and others. - Chapter 96"
+  },
+  "16": {
+    "name": "Preparations of meat, of fish or of crustaceans, molluscs or other aquatic invertebrates",
+    "slug": "chapter-16-fish-meat-crustaceans-molluscs-aquatic-invertebrates-preparations-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Preparations of meat, of fish or of crustaceans, molluscs or other aquatic invertebrates - Chapter16",
+    "metaDescription": "GST Rates & HSN Code for Preserved/Prepared Meat, Extract & Juices of Animals, Fish, Aquatic Invertebrates, Crustaceans & Molluscs - Chapter 16"
+  },
+  "17": {
+    "name": "Sugars and sugar confectionery",
+    "slug": "chapter-17-sugar-confectionery-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Sugars and sugar confectionery - Chapter17",
+    "metaDescription": "GST Rates & HSN Code for Cane Jaggery, Beet, Cane & Refined Sugar, Honey, Molasses & Sugar Confectionery - Chapter 17"
+  },
+  "43": {
+    "name": "Furskins and artificial fur; manufactures thereof",
+    "slug": "chapter-43-furskins-artificial-fur-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Furskins and artificial fur; manufactures thereof - Chapter43",
+    "metaDescription": "GST Rates & HSN Codes for Raw Fur Skins, Articles of apparel, Tanned or dressed Fur Skins - Chapter 43"
+  },
+  "19": {
+    "name": "Preparations of cereals, flour, starch or milk; pastrycooks products",
+    "slug": "chapter-19-cereals-flour-starch-milk-pastrycooks-products-preparations-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Preparations of cereals, flour, starch or milk; pastrycooks products - Chapter19",
+    "metaDescription": "GST Rates & HSN Code for Mix & Dough, Piiza, Bread, Pasta, Waffles, Biscuits, Rusk & Waffles - Chapter 19"
+  },
+  "60": {
+    "name": "Knitted or crocheted fabrics",
+    "slug": "chapter-60-knitted-crocheted-fabrics-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Knitted or crocheted fabrics - Chapter60",
+    "metaDescription": "GST Rates & HSN Codes For Pile,Wrap Knit,Tarry & Croched Fabrics, Wrape Knit Fabrics, Galoons - Chapter 60"
+  },
+  "45": {
+    "name": "Cork and articles of cork",
+    "slug": "chapter-45-cork-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Cork and articles of cork - Chapter45",
+    "metaDescription": "GST Rates & HSN Codes for Natural Cork, Shuttlecock Cork, Agglomerated Cork & articles of agglomerated cork, Waste Cork, - Chapter 45"
+  },
+  "54": {
+    "name": "Man-made filaments; strip and the like of man-made textile materials",
+    "slug": "chapter-54-man-made-filaments-strip-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Man-made filaments; strip and the like of man-made textile materials - Chapter54",
+    "metaDescription": "GST Rates & HSN Codes For Synthetic Felaments, Woven Fabrics & Viscose Rayon Artificial Filament Rayens And Rayon Materials - Chapter 54"
+  },
+  "46": {
+    "name": "Manufactures of straw, of esparto or of other plaiting materials; basketware and wickerwork",
+    "slug": "chapter-46-straw-esparto-basketware-wickerwork-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Manufactures of straw, of esparto or of other plaiting materials; basketware and wickerwork - Chapter46",
+    "metaDescription": "GST Rates & HSN Codes for Plaits & Plaiting Materials, Basketwork, Wickerwork, Articles of Loofah of Vegetable materials - Chapter 46"
+  },
+  "56": {
+    "name": "Wadding, felt and nonwovens; special yarns; twine, cordage, ropes and cables and articles thereof",
+    "slug": "chapter-56-wadding-felt-nonwovens-yarns-twine-cordage-ropes-cables-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Wadding, felt and nonwovens; special yarns; twine, cordage, ropes and cables and articles thereof - Chapter56",
+    "metaDescription": "GST Rates & HSN Codes For Wadding Of Textile Materials Towels And Tampons, Napkins And Napkin Liners, Sanitary Articles, Yarn Materials, Ropes, Netting Materials - Chapter 56"
+  },
+  "57": {
+    "name": "Carpets and other textile floor coverings",
+    "slug": "chapter-57-carpets-floor-coverings-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Carpets and other textile floor coverings - Chapter57",
+    "metaDescription": "GST Rates & HSN Codes For Carpets & Floor Coverings Textile Handlooms Man Made Textile GST Rates & HSN Codes For Materials, Handlooms Polyamides - Chapter 57"
+  },
+  "64": {
+    "name": "Footwear, gaiters and the like; parts of such articles",
+    "slug": "chapter-64-footwear-gaiters-parts-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Footwear, gaiters and the like; parts of such articles - Chapter64",
+    "metaDescription": "GST Rates & HSN Codes on Waterproof footwear with soles, leather, socks, rubber & plastics - Chapter 64"
+  },
+  "99": {
+    "name": "Services",
+    "slug": "chapter-99-services-sac-code-gst-rate",
+    "metaTitle": "GST Rate & HSN Code for Services - Chapter99",
+    "metaDescription": "SAC Codes & GST Rates for Services - Chapter 99"
+  },
+  "65": {
+    "name": "Headgear and parts thereof",
+    "slug": "chapter-65-headgear-parts-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Headgear and parts thereof - Chapter65",
+    "metaDescription": "GST Rates & HSN Codes on Hats forms, bodies, shapes & other Headgear - Chapter 65"
+  },
+  "66": {
+    "name": "Umbrellas, sun umbrellas, walking-sticks, seat-sticks, whips, riding-crops and parts thereof",
+    "slug": "chapter-66-sun-umbrellas-walking-sticks-seat-whips-riding-crops-parts-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Umbrellas, sun umbrellas, walking-sticks, seat-sticks, whips, riding-crops and parts thereof - Chapter66",
+    "metaDescription": "GST Rates & HSN Codes on Umbrellas- Walking sticks, parts & Trimming - Chapter 66"
+  },
+  "67": {
+    "name": "Prepared feathers and down and articles made of feathers or of down; artificial flowers; articles of human hair",
+    "slug": "chapter-67-prepared-feathers-artificial-flowers-human-hair-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Prepared feathers and down and articles made of feathers or of down; artificial flowers; articles of human hair - Chapter67",
+    "metaDescription": "GST Rates & HSN Codes on Artificial Flowers, Wigs, False Beards, Eyebrows & Eyelashes - Chapter 67"
+  },
+  "78": {
+    "name": "Lead and articles thereof",
+    "slug": "chapter-78-lead-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Lead and articles thereof - Chapter78",
+    "metaDescription": "GST Rates & HSN Codes on Lead Rods, Sheets, Profiles, Bars, Wires & Unwrought Lead - Chapter 78"
+  },
+  "86": {
+    "name": "Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical (including electro-mechanical) traffic signalling equipment of all kinds",
+    "slug": "chapter-86-railway-tramway-locomotives-rolling-stock-track-fixtures-fittings-electro-mechanical-traffic-signalling-equipment-parts-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical (including electro-mechanical) traffic signalling equipment of all kinds - Chapter86",
+    "metaDescription": "GST Rates & HSN Code for Railway Locomotives & Parts - Wagons, Bogies, Equipment, Tracks and Others - Chapter 86"
+  },
+  "88": {
+    "name": "Aircraft, spacecraft, and parts thereof",
+    "slug": "chapter-88-aircraft-spacecraft-parts-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Aircraft, spacecraft, and parts thereof - Chapter88",
+    "metaDescription": "GST Rates & HSN Code for Balloons, Parachutes & Airlift Gear - Drigibles, Gliders, Launching Gear and Others - Chapter 88"
+  },
+  "89": {
+    "name": "Ships, boats and floating structures",
+    "slug": "chapter-89-ships-boats-floating-structures-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Ships, boats and floating structures - Chapter89",
+    "metaDescription": "GST Rates & HSN Code for Cruise Ships & Boats - Light Weight Vessels, Yachts and Others - Chapter 89"
+  },
+  "97": {
+    "name": "Works of art, collectors' pieces and antiques",
+    "slug": "chapter-97-art-collectors-pieces-antiques-works-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Works of art, collectors' pieces and antiques - Chapter97",
+    "metaDescription": "GST Rate & HSN Code for Paintings, Decoratives & Sculptures - Madhubani, Kalamkari & Rajasthani Paintings, Sculptures, Statuary, Stuffed Animals & Antiques. - Chapter 97"
+  },
+  "98": {
+    "name": "Project imports; laboratory chemicals; passengers' baggage, personal importations by air or post; ship stores",
+    "slug": "chapter-98-laboratory-chemicals-baggage-imports-gst-rate-hsn-code",
+    "metaTitle": "GST Rate & HSN Code for Project imports; laboratory chemicals; passengers' baggage, personal importations by air or post; ship stores - Chapter98",
+    "metaDescription": "GST Rate & HSN Code for Machinery, Mowers, Gears, Transmission Equipments, Spare Parts, Lab Chemicals, Dutiable Articles, Drugs & Medicines. - Chapter 98"
+  }
+}

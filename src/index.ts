@@ -28,6 +28,11 @@
 
 export { getGSTTreatment } from "./engine";
 
+// ─── HSN / SAC search engine ─────────────────────────────────────────────────
+export { hydrate, search, getByCode, parseCode } from "./hsn";
+export type { SearchResult, SearchOptions, CodeHierarchy, Rate, ChapterSeo, HsnRecord, RawRate } from "./hsn-types";
+export { getChapterSeo, getChapterName } from "./seo";
+
 export { computeTax, GST_RATE_SLABS } from "./tax";
 export type { TaxBreakdown, TaxRate } from "./tax";
 

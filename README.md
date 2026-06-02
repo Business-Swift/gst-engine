@@ -437,6 +437,155 @@ Business Swift believes that foundational developer tools — especially those t
 
 ---
 
+---
+
+## HSN / SAC Search Engine
+
+`@business-swift/gst-engine` includes a fully client-side, FlexSearch-powered HSN & SAC code lookup engine. It lazy-loads ~25,000 records on first use and provides sub-10ms typeahead in the browser.
+
+### Installation
+
+```bash
+npm install @business-swift/gst-engine
+```
+
+### Quick start
+
+```typescript
+import { hydrate, search, getByCode, parseCode } from "@business-swift/gst-engine";
+
+// Call once (e.g. on search-bar focus) — subsequent calls are instant
+await hydrate();
+
+// Typeahead — returns up to 10 matches
+const results = await search("laptop");
+console.log(results[0]);
+// {
+//   code: "8471",
+//   type: "HSN",
+//   name: "AUTOMATIC DATA PROCESSING MACHINES AND UNITS THEREOF",
+//   currentRate: "18%",
+//   rates: [{ pct: "18", desc: "...", from: "01/07/2017", isCurrent: true }],
+//   chapter: { number: "84", name: "Nuclear reactors, boilers, machinery..." },
+//   seo: { slug: "chapter-84-...", metaTitle: "GST Rate & HSN Code for...", ... },
+//   matchedOn: "keywords",
+//   updatedAt: "2025-08-19T16:17:32.749"
+// }
+
+// Exact lookup
+const item = await getByCode("8471");
+
+// Parse a code into its hierarchy
+const h = parseCode("84713010");
+// { level: 4, chapter: "84", heading: "8471", subheading: "847130", tariff: "84713010" }
+```
+
+### Search options
+
+```typescript
+// Filter by type
+const sacResults = await search("software", { type: "SAC" });
+
+// Filter by chapter
+const oils = await search("oil", { chapter: "15", limit: 20 });
+
+// Custom limit (max 50)
+const top5 = await search("motor", { limit: 5 });
+```
+
+### Synchronous SEO helpers
+
+These work without calling `hydrate()` and load only the 98-chapter metadata file (~20 KB):
+
+```typescript
+import { getChapterSeo, getChapterName } from "@business-swift/gst-engine";
+
+const seo = getChapterSeo("84");
+// { name: "Nuclear reactors...", slug: "chapter-84-...", metaTitle: "...", metaDescription: "..." }
+
+const name = getChapterName("01");
+// "Live Animals; Animal products"
+```
+
+### Next.js integration example
+
+```tsx
+// app/hsn-sac/page.tsx
+"use client";
+import { useState, useCallback } from "react";
+import { hydrate, search, SearchResult } from "@business-swift/gst-engine";
+
+let hydrated = false;
+
+export default function HsnSearchPage() {
+  const [results, setResults] = useState<SearchResult[]>([]);
+
+  const handleFocus = useCallback(async () => {
+    if (!hydrated) {
+      await hydrate();
+      hydrated = true;
+    }
+  }, []);
+
+  const handleChange = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const q = e.target.value.trim();
+    if (q.length < 2) { setResults([]); return; }
+    setResults(await search(q, { limit: 10 }));
+  }, []);
+
+  return (
+    <div>
+      <input onFocus={handleFocus} onChange={handleChange} placeholder="Search HSN / SAC code…" />
+      <ul>
+        {results.map((r) => (
+          <li key={r.code}>
+            <a href={`/hsn-sac/${r.code}`}>
+              <strong>{r.code}</strong> — {r.name} <em>({r.currentRate})</em>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+### HSN API reference
+
+| Function | Signature | Description |
+|---|---|---|
+| `hydrate` | `() => Promise<void>` | Lazy-loads index. Idempotent, concurrent-safe. |
+| `search` | `(query, opts?) => Promise<SearchResult[]>` | Full-text typeahead. |
+| `getByCode` | `(code) => Promise<SearchResult \| null>` | Exact code lookup. |
+| `parseCode` | `(code) => CodeHierarchy` | Parses code into chapter/heading/subheading/tariff. |
+| `getChapterSeo` | `(ch) => ChapterSeo \| null` | SEO metadata for a chapter. Synchronous. |
+| `getChapterName` | `(ch) => string \| null` | Chapter name. Synchronous. |
+
+#### `SearchOptions`
+
+| Field | Type | Default | Description |
+|---|---|---|---|
+| `limit` | `number` | `10` | Max results (capped at 50). |
+| `type` | `"HSN" \| "SAC"` | — | Filter by code type. |
+| `chapter` | `string` | — | 2-digit chapter filter, e.g. `"15"`. |
+
+#### `SearchResult`
+
+| Field | Type | Description |
+|---|---|---|
+| `code` | `string` | HSN / SAC code. |
+| `type` | `"HSN" \| "SAC"` | Derived: ch `"99"` → SAC. |
+| `name` | `string` | Short product name. |
+| `currentRate` | `string` | Latest effective GST rate, e.g. `"18%"`. |
+| `rates` | `Rate[]` | All historical + current rates, newest-first. |
+| `chapter.number` | `string` | 2-digit chapter. |
+| `chapter.name` | `string` | Chapter name. |
+| `seo` | `ChapterSeo` | Chapter SEO metadata for detail pages. |
+| `matchedOn` | `"code" \| "name" \| "keywords" \| "description"` | Which field produced the hit. |
+| `updatedAt` | `string` | ISO date of last data update. |
+
+---
+
 ## License
 
 **MIT License** — Copyright (c) 2026 Business Swift. Made in India 🇮🇳
