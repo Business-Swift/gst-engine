@@ -62,12 +62,12 @@
       "<rootDir>/src"
     ]
   },
-  "homepage": "https://github.com/businessswift/gst-engine#readme",
+  "homepage": "https://github.com/Business-Swift/gst-engine#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/businessswift/gst-engine.git"
+    "url": "git+https://github.com/Business-Swift/gst-engine.git"
   },
   "bugs": {
-    "url": "https://github.com/businessswift/gst-engine/issues"
+    "url": "https://github.com/Business-Swift/gst-engine/issues"
   }
 }
