@@ -156,6 +156,22 @@ function resolvePlaceOfSupply(
   return { posStateCode: billingState, isBillToShipTo, posSource: "billing" };
 }
 
+/**
+ * Whether the supplier is entitled to charge GST at all.
+ *
+ * Two cases where they are not, regardless of the supply:
+ *   1. No GSTIN — an unregistered supplier cannot collect GST from the
+ *      recipient (CGST s.32(1): only a registered person may collect tax).
+ *   2. Composition scheme — a composition taxpayer pays tax out of pocket
+ *      and issues a *bill of supply*, not a tax invoice, so no tax head is
+ *      chargeable on the document (CGST s.10(4) / Rule 5(1)(b)).
+ */
+function canSupplierChargeGST(supplier: SupplierInfo): boolean {
+  if (!normaliseGSTIN(supplier.gstin)) return false;
+  if (supplier.registrationType === RegistrationType.COMPOSITION) return false;
+  return true;
+}
+
 function getSupplierStateCode(supplier: SupplierInfo): string | undefined {
   // 1. Extract from GSTIN (most authoritative)
   const normGstin = normaliseGSTIN(supplier.gstin);
@@ -228,6 +244,55 @@ export function getGSTTreatment(
   const customerGstin = normaliseGSTIN(customer.gstin);
 
   const shipping = customer.shippingAddress ?? customer.billingAddress;
+
+  // ── 0. Supplier not entitled to charge GST ────────────────────────────────
+  // An unregistered or composition supplier charges no tax on *any* supply —
+  // B2B, B2C, export, SEZ or deemed export alike. Place of supply and
+  // inter/intra-state are still resolved (they drive reporting and the e-way
+  // bill), but every tax head is zero, so callers passing this taxType into
+  // computeTax() get 0.
+  //
+  // Deliberately runs *after* the NON_GST / NIL_RATED / EXEMPTED branches
+  // below: those describe the supply itself, are equally untaxed, and are the
+  // more specific answer. It runs *before* every branch that would otherwise
+  // charge tax.
+  const supplierCannotChargeGST = !canSupplierChargeGST(supplier);
+  if (supplierCannotChargeGST && supplyNature === SupplyNature.TAXABLE) {
+    const isComposition =
+      supplier.registrationType === RegistrationType.COMPOSITION;
+    const { posStateCode, isBillToShipTo, posSource } = resolvePlaceOfSupply(
+      customer,
+      isGoods,
+    );
+    const supplierStateCode = getSupplierStateCode(supplier);
+    const supplyType =
+      !supplierStateCode || !posStateCode
+        ? SupplyType.INTER_STATE
+        : isSameState(supplierStateCode, posStateCode)
+          ? SupplyType.INTRA_STATE
+          : SupplyType.INTER_STATE;
+
+    return base({
+      category: isComposition ? GSTCategory.COMPOSITION : GSTCategory.UNREGISTERED_SUPPLIER,
+      supplyType,
+      taxType: TaxType.NONE,
+      posStateCode,
+      isBillToShipTo,
+      posSource,
+      rationale: [
+        isComposition
+          ? "Supplier is registered under the composition scheme — tax is paid out of the supplier's own pocket, not collected on the invoice."
+          : "Supplier has no GSTIN — an unregistered supplier cannot collect GST from the recipient.",
+        "Issue a bill of supply (not a tax invoice); no CGST/SGST/IGST or cess is chargeable.",
+        `PoS: state ${posStateCode ?? "unknown"} (${posSource}).`,
+      ].join(" "),
+      eInvoiceApplicable: false,
+      eWayBillRequired:
+        isGoods && invoice.taxableValue > EWAY_BILL_VALUE_THRESHOLD,
+      supplierGstin,
+      customerGstin,
+    });
+  }
 
   // ── 1. Non-taxable supply natures ─────────────────────────────────────────
 

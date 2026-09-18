@@ -192,6 +192,8 @@ If `billingAddress.countryCode` or `shippingAddress.countryCode` is any value ot
 | `NIL_RATED`              | 0% GST by law                                               |
 | `EXEMPTED`               | Exempt from GST                                             |
 | `NON_GST`                | Outside GST scope (petroleum, alcohol, etc.)                |
+| `UNREGISTERED_SUPPLIER`  | Supplier has no GSTIN — cannot collect GST (no tax)         |
+| `COMPOSITION`            | Composition-scheme supplier — bill of supply (no tax)       |
 
 ### `RegistrationType`
 
@@ -385,6 +387,45 @@ getStateName("07"); // "Delhi"
 
 ---
 
+## When the Supplier Cannot Charge GST
+
+Two supplier states make the invoice untaxable regardless of anything else —
+customer type, states involved, invoice value, or export status:
+
+| Supplier state                             | Category                | Tax    |
+| ------------------------------------------ | ----------------------- | ------ |
+| No `gstin`                                 | `UNREGISTERED_SUPPLIER` | `NONE` |
+| `registrationType: COMPOSITION`            | `COMPOSITION`           | `NONE` |
+
+Only a registered person may collect GST (CGST s.32(1)), and a composition
+taxpayer pays out of pocket and issues a **bill of supply**, not a tax invoice
+(CGST s.10(4)). In both cases `taxType` is `NONE`, so any rate passed to
+`computeTax` yields zero:
+
+```typescript
+const treatment = getGSTTreatment({
+  supplier: { address: { stateCode: "27" } }, // no GSTIN
+  customer: { gstin: "29BBBPL5678D1Z3", billingAddress: { stateCode: "29" } },
+  invoice: { taxableValue: 100000 },
+});
+
+treatment.category; // "UNREGISTERED_SUPPLIER"
+treatment.taxType;  // "NONE"
+
+// Even at an 18% slab, every head is zero:
+computeTax(100000, 18, treatment.taxType);
+// → { cgst: 0, sgst: 0, igst: 0, cess: 0, totalTax: 0, grandTotal: 100000 }
+```
+
+Place of supply and `supplyType` are still resolved — they drive GSTR-1
+reporting and the e-way bill, which apply even when no tax does.
+
+> **Note:** `NIL_RATED`, `EXEMPTED` and `NON_GST` supply natures keep their own
+> category. They are equally untaxed and describe the supply itself, which is
+> the more specific answer.
+
+---
+
 ## Full Decision Tree
 
 ```
@@ -393,6 +434,11 @@ GSTTreatmentInput
        ├─ supplyNature = NON_GST          → NON_GST        (no tax)
        ├─ supplyNature = NIL_RATED        → NIL_RATED       (no tax)
        ├─ supplyNature = EXEMPTED         → EXEMPTED        (no tax)
+       │
+       ├─ supplier has NO GSTIN?          → UNREGISTERED_SUPPLIER (no tax)
+       ├─ supplier is COMPOSITION?        → COMPOSITION           (no tax)
+       │    Both short-circuit every branch below — an unregistered or
+       │    composition supplier charges no tax on any supply.
        │
        ├─ customer overseas?              ──────────────────────────────┐
        │    (countryCode ≠ "IN" on         withPaymentOfTax=true  → EXPORT_WITH_PAYMENT  (IGST)

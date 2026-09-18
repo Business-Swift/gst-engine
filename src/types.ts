@@ -23,6 +23,16 @@ export enum GSTCategory {
   NIL_RATED = "NIL_RATED",
   EXEMPTED = "EXEMPTED",
   NON_GST = "NON_GST",
+  /**
+   * Supplier has no GSTIN. An unregistered supplier cannot collect GST,
+   * so no tax head is chargeable — issue a bill of supply.
+   */
+  UNREGISTERED_SUPPLIER = "UNREGISTERED_SUPPLIER",
+  /**
+   * Supplier is under the composition scheme: tax is paid out of their own
+   * pocket at a flat rate, never collected on the invoice.
+   */
+  COMPOSITION = "COMPOSITION",
 }
 
 /** Whether the supply crosses state lines */

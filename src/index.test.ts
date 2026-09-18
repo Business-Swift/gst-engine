@@ -549,9 +549,9 @@ describe("bill-to / ship-to detection", () => {
         customer: { gstin: "27CCCPL9012E1Z8", billingAddress: BILL_MH },
         invoice: INV_100K,
       });
-      expect(r.category).toBe(GSTCategory.B2B);
+      expect(r.category).toBe(GSTCategory.UNREGISTERED_SUPPLIER);
       expect(r.supplyType).toBe(SupplyType.INTRA_STATE);
-      expect(r.taxType).toBe(TaxType.CGST_SGST);
+      expect(r.taxType).toBe(TaxType.NONE);
       expect(r.supplierGstin).toBeUndefined();
     });
 
@@ -561,9 +561,9 @@ describe("bill-to / ship-to detection", () => {
         customer: { gstin: "29BBBPL5678D1Z3", billingAddress: BILL_KA },
         invoice: INV_100K,
       });
-      expect(r.category).toBe(GSTCategory.B2B);
+      expect(r.category).toBe(GSTCategory.UNREGISTERED_SUPPLIER);
       expect(r.supplyType).toBe(SupplyType.INTER_STATE);
-      expect(r.taxType).toBe(TaxType.IGST);
+      expect(r.taxType).toBe(TaxType.NONE);
       expect(r.supplierGstin).toBeUndefined();
     });
 
@@ -574,7 +574,7 @@ describe("bill-to / ship-to detection", () => {
         invoice: INV_100K,
       });
       expect(r.supplyType).toBe(SupplyType.INTRA_STATE);
-      expect(r.taxType).toBe(TaxType.CGST_SGST);
+      expect(r.taxType).toBe(TaxType.NONE);
     });
 
     test("inter-state B2C_LARGE — supplier MH, customer KA, value > 2.5L \u2192 IGST", () => {
@@ -583,8 +583,8 @@ describe("bill-to / ship-to detection", () => {
         customer: { billingAddress: BILL_KA },
         invoice: INV_300K,
       });
-      expect(r.category).toBe(GSTCategory.B2C_LARGE);
-      expect(r.taxType).toBe(TaxType.IGST);
+      expect(r.category).toBe(GSTCategory.UNREGISTERED_SUPPLIER);
+      expect(r.taxType).toBe(TaxType.NONE);
       expect(r.supplierGstin).toBeUndefined();
     });
 
@@ -604,7 +604,10 @@ describe("bill-to / ship-to detection", () => {
         { supplier: SUPPLIER_MH_NO_GSTIN, customer: { billingAddress: BILL_US }, invoice: INV_100K },
         { isGoods: true },
       );
-      expect(r.category).toBe(GSTCategory.EXPORT_WITHOUT_PAYMENT);
+      // Export by an unregistered supplier: no tax either way, but the
+      // blocking reason is the missing GSTIN, not the LUT/bond route.
+      expect(r.category).toBe(GSTCategory.UNREGISTERED_SUPPLIER);
+      expect(r.taxType).toBe(TaxType.NONE);
       expect(r.eWayBillRequired).toBe(true);
       expect(r.supplierGstin).toBeUndefined();
     });
@@ -636,7 +639,84 @@ describe("bill-to / ship-to detection", () => {
         getGSTTreatment({ supplier: { address: { stateCode: "27" } }, customer: { billingAddress: BILL_KA }, invoice: INV_100K }),
       ).not.toThrow();
     });
+    test("computed tax is zero end-to-end for an unregistered supplier", () => {
+      const r = getGSTTreatment({
+        supplier: SUPPLIER_MH_NO_GSTIN,
+        customer: { gstin: "29BBBPL5678D1Z3", billingAddress: BILL_KA },
+        invoice: INV_100K,
+      });
+      // Even handed an 18% slab, TaxType.NONE zeroes every head.
+      const t = computeTax(INV_100K.taxableValue, 18, r.taxType);
+      expect(t.cgst).toBe(0);
+      expect(t.sgst).toBe(0);
+      expect(t.igst).toBe(0);
+      expect(t.cess).toBe(0);
+      expect(t.totalTax).toBe(0);
+      expect(t.grandTotal).toBe(INV_100K.taxableValue);
+    });
+
+    test("non-taxable nature keeps its own category, not UNREGISTERED_SUPPLIER", () => {
+      // EXEMPTED/NIL_RATED/NON_GST describe the supply itself and are equally
+      // untaxed, so they stay the more specific answer.
+      for (const nature of [
+        SupplyNature.EXEMPTED,
+        SupplyNature.NIL_RATED,
+        SupplyNature.NON_GST,
+      ]) {
+        const r = getGSTTreatment({
+          supplier: SUPPLIER_MH_NO_GSTIN,
+          customer: { billingAddress: BILL_KA },
+          invoice: INV_10K,
+          supplyNature: nature,
+        });
+        expect(r.category).not.toBe(GSTCategory.UNREGISTERED_SUPPLIER);
+        expect(r.taxType).toBe(TaxType.NONE);
+      }
+    });
   }); // end supplier without GSTIN
+
+  describe("composition supplier — cannot collect GST", () => {
+    const SUPPLIER_MH_COMPOSITION = {
+      gstin: "27AAAPL1234C1Z5",
+      registrationType: RegistrationType.COMPOSITION,
+    };
+
+    test("intra-state → no CGST+SGST despite having a GSTIN", () => {
+      const r = getGSTTreatment({
+        supplier: SUPPLIER_MH_COMPOSITION,
+        customer: { gstin: "27CCCPL9012E1Z8", billingAddress: BILL_MH },
+        invoice: INV_100K,
+      });
+      expect(r.category).toBe(GSTCategory.COMPOSITION);
+      expect(r.taxType).toBe(TaxType.NONE);
+      // The GSTIN is real and still reported, it just can't be taxed on.
+      expect(r.supplierGstin).toBe("27AAAPL1234C1Z5");
+    });
+
+    test("inter-state → no IGST", () => {
+      const r = getGSTTreatment({
+        supplier: SUPPLIER_MH_COMPOSITION,
+        customer: { gstin: "29BBBPL5678D1Z3", billingAddress: BILL_KA },
+        invoice: INV_300K,
+      });
+      expect(r.category).toBe(GSTCategory.COMPOSITION);
+      expect(r.supplyType).toBe(SupplyType.INTER_STATE);
+      expect(r.taxType).toBe(TaxType.NONE);
+    });
+
+    test("REGULAR registration with a GSTIN still charges tax", () => {
+      const r = getGSTTreatment({
+        supplier: {
+          gstin: "27AAAPL1234C1Z5",
+          registrationType: RegistrationType.REGULAR,
+        },
+        customer: { gstin: "27CCCPL9012E1Z8", billingAddress: BILL_MH },
+        invoice: INV_100K,
+      });
+      expect(r.category).toBe(GSTCategory.B2B);
+      expect(r.taxType).toBe(TaxType.CGST_SGST);
+    });
+  }); // end composition supplier
 
 }); // end describe("getGSTTreatment")
 
